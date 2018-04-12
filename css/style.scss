@@ -84,9 +84,33 @@ header {
 
 section {
     flex: 1;
-    overflow-y: scroll;
+    overflow: hidden;
+    .scroll {
+        overflow-y: auto;
+        .nav {
+            @include num(100%, 1rem);
+        }
+        .box {
+            @include num(100%, auto);
+        }
+    }
 }
 
 footer {
     @include num(100%, 1rem);
+    @include flex(space-around);
+    a {
+        @include flex(space-around);
+        flex-direction: column;
+        color: #5F6670;
+        &.active {
+            color: #22AC38;
+        }
+        i.icon {
+            font-size: .34rem;
+        }
+        span {
+            font-size: .3rem;
+        }
+    }
 }
